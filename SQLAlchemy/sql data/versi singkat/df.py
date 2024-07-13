@@ -5,7 +5,10 @@ import pandas as pd
 engine = create_engine('mysql://root:@localhost/pembelian_shopee')
 # engine = create_engine('mysql://root:password@localhost/pembelian_shopee')
 
-df = pd.read_sql('select * from sku_detail', engine)
+# Menggunakan connection dari engine
+connection = engine.raw_connection()
+
+df = pd.read_sql('select * from sku_detail', connection)
 
 
 print(df.head())

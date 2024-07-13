@@ -50,9 +50,11 @@ query = """
     WHERE term LIKE 'Aaron%'
     LIMIT 10
 """
+# Menggunakan connection dari engine
+connection = engine.raw_connection()
 
 # Eksekusi query dan ambil hasilnya sebagai DataFrame
-results_df = pd.read_sql(query, engine)
+results_df = pd.read_sql(query, connection)
 
 # Tampilkan DataFrame
 print(results_df)

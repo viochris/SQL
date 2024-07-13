@@ -17,9 +17,12 @@ connection_url = f'oracle+cx_oracle://{username}:{password}@{host}:{port}/{sid}'
 # Membuat engine
 engine = create_engine(connection_url)
 
+# Menggunakan connection dari engine
+connection = engine.raw_connection()
+
 # Eksekusi kueri dan simpan hasil dalam DataFrame
 query = "SELECT * FROM order_detail"
-df = pd.read_sql(query, con=engine)
+df = pd.read_sql(query, con=connection)
 
 # Menampilkan DataFrame
 print(df)

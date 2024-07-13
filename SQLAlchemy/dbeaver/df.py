@@ -10,9 +10,12 @@ db_url = f'sqlite:///{db_path}'
 # Membuat engine SQLAlchemy
 engine = create_engine(db_url)
 
+# Menggunakan connection dari engine
+connection = engine.raw_connection()
+
 # Menjalankan query dan menyimpan hasil ke DataFrame
 query = "SELECT * FROM Customer"
-df = pd.read_sql(query, con=engine)
+df = pd.read_sql(query, con=connection)
 
 # Menampilkan hasil
 print(df.head())

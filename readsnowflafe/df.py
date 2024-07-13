@@ -22,4 +22,4 @@ cur.close()
 conn.close()
 
 # Menampilkan DataFrame
-print(df)
+print(df.head())

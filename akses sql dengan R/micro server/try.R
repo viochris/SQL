@@ -27,3 +27,5 @@ odbcClose(conn)
 
 # Tampilkan hasil
 print(head(result,5))
+
+

@@ -2,7 +2,6 @@
 library(ROracle)
 
 
-
 # Informasi koneksi
 username <- "SYSTEM"
 password <- "S1LV1Ooo"
