@@ -8,7 +8,9 @@ engine = create_engine('mysql://root:@localhost/pembelian_shopee')
 # Menggunakan connection dari engine
 connection = engine.raw_connection()
 
-df = pd.read_sql('select * from sku_detail', connection)
+# df = pd.read_sql('select * from sku_detail', connection)
+# df = pd.read_sql_query('select * from sku_detail', connection)
+df = pd.read_sql_table('sku_detail', engine)
 
 
 print(df.head())

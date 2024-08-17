@@ -6,7 +6,11 @@ connection = mysql.connector.connect(host='localhost', user='root', password='',
 sql1 = "SELECT * FROM orders"
 sql2 = "SELECT * FROM customers"
 df1 = pd.read_sql(sql1, connection)
-df2 = pd.read_sql(sql2, connection)
+df2 = pd.read_sql_query(sql2, connection)
+
+# print(df1)
+# print(df2)
+
 
 df = pd.merge(df1, df2, on='customer_id', how='outer')
 print(df)

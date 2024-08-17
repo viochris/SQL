@@ -8,8 +8,9 @@ sql1 = "SELECT * FROM orders"
 sql2 = "SELECT * FROM customer"
 sql3 = "SELECT * FROM Popular_Baby_Names"
 df1 = pd.read_sql(sql1, conn)
-df2 = pd.read_sql(sql2, conn)
+df2 = pd.read_sql_query(sql2, conn)
 df3 = pd.read_sql(sql3, connection)
+# df3 = pd.read_sql_table('Popular_Baby_Names', connection)
 conn.close()
 
 print(df1.head())
